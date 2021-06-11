@@ -15,6 +15,6 @@ app = Flask(__name__)
 app.config.from_object(Config)
 db = SQLAlchemy(app)
 db.Model.metadata.reflect(db.engine)
-db.create_all()
+# db.create_all()
 # avoiding circular imports
 from . import routes, models

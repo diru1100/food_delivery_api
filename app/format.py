@@ -20,11 +20,11 @@ def preprocess_datetime(input_datetime):
     return dt.strptime(input_date+" "+str(preprocess_time(input_time)), "%m/%d/%Y %H:%M:%S")
 
 
-a = preprocess_time("3 pm")
-b = preprocess_time("5 pm")
-print(str(a))
-if a > b:
-    print("a big")
-else:
-    print("b bigger")
-print(type(preprocess_datetime("02/19/2019 04:20 AM")))
+# a = preprocess_time("3 pm")
+# b = preprocess_time("5 pm")
+# print(str(a))
+# if a > b:
+#     print("a big")
+# else:
+#     print("b bigger")
+# print(type(preprocess_datetime("02/19/2019 04:20 AM")))
