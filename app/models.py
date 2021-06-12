@@ -1,5 +1,7 @@
 from . import db
 
+# Creating db models by taking advantage of already loaded tables in database
+
 
 class Customer(db.Model):
     __table__ = db.Model.metadata.tables['customers']

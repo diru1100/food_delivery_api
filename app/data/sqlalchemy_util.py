@@ -6,6 +6,9 @@ basedir = os.path.abspath(os.path.dirname(__file__))
 
 Base = declarative_base()
 
+# creating Sqlalchemy replicas of tables in database
+# for easier handling of data in etl.py
+
 
 class Customer(Base):
     __tablename__ = "customers"
@@ -46,33 +49,11 @@ class PurchaseHistory(Base):
     transaction_date = Column(String)
 
 
-# class Publisher(Base):
-#     __tablename__ = "publisher"
-#     publisher_id = Column(Integer, primary_key=True)
-#     name = Column(String)
-#     authors = relationship(
-#         "Author", secondary=author_publisher, back_populates="publishers"
-#     )
-#     books = relationship(
-#         "Book", secondary=book_publisher, back_populates="publishers"
-#     )
-
 if __name__ == "__main__":
-
+    # testing code
     sqlite_filepath = 'sqlite:///' + os.path.join(basedir, 'application.db')
     print(sqlite_filepath, '\n\n\n')
     engine = create_engine(f"{sqlite_filepath}")
     Session = sessionmaker()
     Session.configure(bind=engine)
     session = Session()
-
-    # customer = Customer(id=1,
-    #                     name="John Snow",
-    #                     cash_balance=22.2)
-    # customer2 = Customer(id=2,
-    #                      name="Karen",
-    #                      cash_balance=14.5)
-
-    # # session.add(customer)
-    # session.add(customer2)
-    # session.commit()

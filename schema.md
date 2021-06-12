@@ -1,33 +1,12 @@
-Customer table
-- ID
-- Name
-- cashBalance
-
-Purchase history
-
-- ID
-- Customer ID
-- dish ID
-- restaurent ID
-- transaction date
-
-Dish table 
-
-- ID
-- Restaurent ID
-- Dish Name
-- Dish price 
+# Database information
 
 
-Restaurent table
-- ID 
-- Restaurent Name
-- cashBalance
+## Schema diagram
 
-Opening hours
-- Restaurent ID
-- Day of week
-- OpenTime
-- CloseTime
+- The following diagram explins how the database is structured and connected
 
-All times are in hh:mm:ss and datetimes in yyyy:mm:dd hh:mm:ss
+![schema diagram](images/schema_food_delivery.png)
+
+
+- All times are in hh:mm:ss and datetimes in yyyy:mm:dd hh:mm:ss
+- The opening_hours table stores multiple entries of same restaurant if it extends beyond one day.

@@ -3,6 +3,7 @@ import os
 basedir = os.path.abspath(os.path.dirname(__file__))
 
 
+# raw sqlite queries to create needed tables
 sql_create_customers_table = """CREATE TABLE IF NOT EXISTS customers(
                                 id INTEGER PRIMARY KEY,
                                 name TEXT NOT NULL,
@@ -44,7 +45,7 @@ sql_create_restuarent_opening_hours_table = """CREATE TABLE IF NOT EXISTS openin
 
 
 def create_tables():
-    conn = sqlite3.connect(basedir+'/data/application.db')
+    conn = sqlite3.connect(basedir+'/data/etl_application.db')
     conn.execute("PRAGMA foreign_keys = 1")
     curr = conn.cursor()
     curr.execute(sql_create_customers_table)
