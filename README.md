@@ -7,20 +7,18 @@
 - Install required dependencies using ```pip3 install -r requirements.txt```
 - To run the API, use ```flask run```
 
-
 ## ETL process
 
-- All the steps to extract, transform and load given json datasets into SQL database are done in ```app/etl.py```. 
+- All the steps to extract, transform and load given json datasets into SQL database are done in [```app/etl.py```](app/etl.py). 
 - Run it using ```python3 etl.py```
     - I have converted the given data into different tables which made sense to me (room for improvement) 
-    - This will create an ```etl_application.db``` file in ```app/data``` folder.
+    - This will create an ```etl_application.db``` file in [app/data](app/data) folder.
     - **NOTE:** It's gonna take some time (00:03:45 in my machine)
+- The loaded data in database schema is explained in [schema.md](schema.md) to understand it better.
 
-- The loaded data in database schema is explained in ```schema.md``` to understand it better.
+## Checking application
 
-## Testing application
-
-**NOTE:** No need to do above ETL process steps for testing application, as there is a seperate db file called ```prod_application.db``` in ```app/data``` which is used by the application
+**NOTE:** No need to do above ETL process steps for testing application, as there is a seperate db file called ```prod_application.db``` in [app/data](app/data) which is used by the application
 
 - As few steps weren't clear on how data is requested, kindly follow the following structure to get desired output in an other terminal
 
@@ -54,6 +52,9 @@
 
 ## Testing 
 
-- To test the application, move to ```app``` folder and type ```pytest```
+- To test the application, move to [app](app) folder and type ```pytest```
 - I have tested the preprocessing functions which are crucial to format data.
 -  To get code coverage type ```pytest --cov``` Should be 46%
+
+
+My thoughts while doing the application are at [thought_process.md](thought_process.md)
