@@ -27,7 +27,7 @@ def transform_data(customers_data, restaurants_data):
             purchase['transactionDate'] = str(preprocess_datetime(
                 purchase['transactionDate']))
 
-    # transforming restaurannt 'openingHours' attribute
+    # transforming restaurant 'openingHours' attribute
     for restaurant_data in restaurants_data:
 
         day_wise_opening_hours = list()
@@ -38,6 +38,7 @@ def transform_data(customers_data, restaurants_data):
 
             day_wise_opening_hours += preprocess_opening_hours_data(
                 opening_hours_data)
+
             restaurant_data['openingHours'] = day_wise_opening_hours
 
 

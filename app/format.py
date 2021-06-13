@@ -113,6 +113,7 @@ def preprocess_opening_hours_data(opening_hours_data):
     # including days given in different formats like
     # 'Mon, Tue-Sat'
     temp_list_of_days = only_days_string.split(",")
+
     for day in temp_list_of_days:
         if '-' in day:
             multiple_days_with_same_time += preprocess_range_of_days(
@@ -128,3 +129,21 @@ def preprocess_opening_hours_data(opening_hours_data):
         day_wise_opening_hours.append(map_day_to_hours)
 
     return day_wise_opening_hours
+
+
+if __name__ == '__main__':
+
+    sample_opening_hours_data = 'Mon, Fri 2:30 pm - 8 pm / Tues 11 am - 2 pm / Weds 1:15 pm - 3:15 am / Thurs 10 am - 3:15 am / Sat 5 am - 11:30 am / Sun 10:45 am - 5 pm'
+
+    split_sample_opening_hours_data = sample_opening_hours_data.split('/')
+
+    print(split_sample_opening_hours_data, '\n')
+    sample_list = list()
+    for data in split_sample_opening_hours_data:
+        # sample_list += preprocess_opening_hours_data(data)
+        print(preprocess_opening_hours_data(data))
+
+    # print(sample_list)
+
+    sample_input_datetime = '02/10/2020 04:09 AM'
+    print(preprocess_datetime(sample_input_datetime))

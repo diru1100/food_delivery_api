@@ -52,3 +52,8 @@
     ```
     Sample Output: with customer id 6, 7 ![](images/transaction_result.png)
 
+## Testing 
+
+- To test the application, move to ```app``` folder and type ```pytest```
+- I have tested the preprocessing functions which are crucial to format data.
+-  To get code coverage type ```pytest --cov``` Should be 46%
